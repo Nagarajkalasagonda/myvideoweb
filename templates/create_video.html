@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+			<title>Create Ticket</title>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--===============================================================================================-->	
+			<link rel="icon" type="image/png" href="static/images/icons/favicon.ico"/>
+		<!--===============================================================================================-->
+			<link rel="stylesheet" type="text/css" href="static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+		<!--===============================================================================================-->
+			<link rel="stylesheet" type="text/css" href="static/css/util.css">
+			<link rel="stylesheet" type="text/css" href="static/css/main.css">
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+			<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+			<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+
+		<!--===============================================================================================-->
+		<style id="page">
+			textarea,input[type=text], select {
+				width: 50%;
+				padding: 12px 20px;
+				margin: 8px 0;
+				display: inline-block;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				box-sizing: border-box;
+			  }
+			  textarea[type=text]{
+				width: 80%;
+				padding: 12px 20px;
+				margin: 8px 0;
+				display: inline-block;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				box-sizing: border-box;
+			  }
+			  </style>
+	</head>
+	<!-- Header -->
+		
+	<body class="w3-light-grey">
+
+<!-- Page Container -->
+<div class="w3-content w3-margin-top" style="max-width:1400px;">
+
+  <!-- The Grid -->
+  <div class="w3-row-padding">
+  
+    
+    <!-- Right Column -->
+    <div class="w3-twothird">
+    
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+			<div><a href="/"><b> <h2>Go To Home<h2></b></a></div>					
+       <div class="w3-container">
+							<form action="" method="POST" enctype="multipart/form-data">
+									{% csrf_token %}
+								<h2 class="w3-text-grey w3-padding-16">Create Video</h2><br>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="form-group">
+											<span>Name</span><br>
+											<input class="input" type="text" name="title"><br>
+										</div>
+									</div><br>
+									<div class="col-md-12">
+										<div class="full-group">
+										<span>Description</span><br>
+											<textarea class="input" type="text"  name="description" placeholder="Description"></textarea>
+										</div>
+										
+									</div><br>
+									<div class="col-md-12">
+										<div class="form-group">
+											<span>Tag</span><br>
+											<input class="input" type="text" name="tag">
+										</div>
+									</div><br>
+									<div class="col-md-12">
+										<div class="form-group">
+											<span>Catagory</span><br>
+											<span>
+												<select name="category" size="1">
+												  <option value="volvo">Animation</option>
+												  <option value="saab">English</option>
+												  <option value="opel">Hindi</option>
+												  <option value="audi">Kannada</option>
+												</select>
+											</span>
+											
+										</div>
+									</div><br>
+									<div class="col-md-12">
+										<div class="form-group">
+											<span>Reference ID</span><br>
+											<input class="input" type="text" name="referenceid">
+										</div>
+									</div><br>
+									<br>
+									<div>
+										<span>Select the video to upload</span><br>
+										<input type="file" name="video_upload"><br>
+									</div>
+									<br>
+									<button class="login100-form-btn">Submit</button>
+								</div>
+							</form>
+        </div>
+        
+        
+      </div>
+
+	  <div>
+			{% for message in messages%}
+				<h1>  {{message}} </h1>
+			{%endfor%}
+	</div>
+
+    <!-- End Right Column -->
+    </div>
+    
+  <!-- End Grid -->
+  </div>
+  
+  <!-- End Page Container -->
+</div>
+
+</body>
+
+</html>
+					

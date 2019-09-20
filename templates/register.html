@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+		<head>
+				<meta charset="utf-8">
+				<meta http-equiv="X-UA-Compatible" content="IE=edge">
+				<meta name="viewport" content="width=device-width, initial-scale=1">
+				
+		
+				<title>Registeration Page</title>
+		
+				<!-- Google font -->
+				<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:700%7CNunito:300,600" rel="stylesheet"> 
+		
+				
+				<link type="text/css" rel="stylesheet" href="static/css/bootstrap.min.css"/>
+		
+				
+				<link rel="stylesheet" href="static/css/font-awesome.min.css">
+		
+				
+                <link type="text/css" rel="stylesheet" href="static/css/style.css"/>
+                <style id="page">
+                    input[type=text], select {
+                        width: 50%;
+                        padding: 12px 20px;
+                        margin: 8px 0;
+                        display: inline-block;
+                        border: 1px solid #ccc;
+                        border-radius: 4px;
+                        box-sizing: border-box;
+                      }
+                      input[password=password] {
+                        width: 50%;
+                        padding: 12px 20px;
+                        margin: 8px 0;
+                        display: inline-block;
+                        border: 1px solid #ccc;
+                        border-radius: 4px;
+                        box-sizing: border-box;
+                      }
+                      </style>
+			</head>
+	<body>
+
+		<!-- Header -->
+		<header id="header">
+            <!-- Nav -->
+            
+			<div id="nav">
+				<!-- Main Nav -->
+				<div id="nav-fixed">
+					<div class="container">
+						<!-- logo -->
+						<div class="nav-logo">
+							<a href="/login" class="logo"> <img src="static/img/logo.png" alt="Logo"></a>
+						</div>
+						<!-- /logo -->
+
+						<!-- nav -->
+						
+						<!-- /nav -->
+
+				
+				</div>
+				<!-- Aside Nav -->
+			</div>
+			<!-- /Nav -->
+		</header>
+					<div class="container-listing">			
+						<div class="row">
+							<!-- Post content -->
+
+							
+							<form action="register" method=POST>{% csrf_token %}
+								<h2 style="text-align: center">User Registeration Page</h2>
+								<br>
+								<h3 style="text-align: center">Please Provide Email Address as username</h3>
+								<div style="text-align: center">
+								 	<input type="text" name="first_name" placeholder="First Name"><br>
+                                 <input type="text" name="last_name" placeholder="Last Name"><br>
+                                 <input type="text" name="email" placeholder="Email Address"><br>
+                                 <input type="text" name="contact" placeholder="Contact Number"><br>
+                                 <input type="text" name="username" placeholder="username"><br>
+										
+										<input type="password" name="password1" placeholder="Password"><br>
+										<input type="password" name="password2" placeholder="Conform Password"><br>
+										<input type="submit">
+									</form>
+
+									<div>
+										{% for message in messages%}
+											<h1>        {{message}} </h1>
+										{%endfor%}
+									</div>
+								</div>
+									
+							
+						</div>
+                    </div>
+                
+	</body>
+</html>
+					
